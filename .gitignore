@@ -1,0 +1,25 @@
+# Dependency folders
+node_modules/
+frontend/node_modules/
+backend/node_modules/
+
+# Next.js build folder
+backend/.next/
+
+# Vite build folder
+frontend/dist/
+frontend/dist-ssr/
+
+# Local database file
+backend/gym_db.json
+
+# Environment files
+backend/.env.local
+backend/.env
+
+# Editors/System files
+.DS_Store
+.vscode/
+.idea/
+*.log
+*.tsbuildinfo

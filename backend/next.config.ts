@@ -1,0 +1,24 @@
+import type { NextConfig } from "next";
+
+const nextConfig: NextConfig = {
+  // Keep the production compiler within the Windows workspace's filesystem
+  // limits while it emits route metadata and static client assets.
+  experimental: {
+    cpus: 1,
+  },
+  async headers() {
+    return [
+      {
+        source: "/api/gym/:path*",
+        headers: [
+          { key: "Access-Control-Allow-Credentials", value: "true" },
+          { key: "Access-Control-Allow-Origin", value: "http://localhost:5173" },
+          { key: "Access-Control-Allow-Methods", value: "GET,DELETE,PATCH,POST,PUT,OPTIONS" },
+          { key: "Access-Control-Allow-Headers", value: "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version, Authorization" },
+        ]
+      }
+    ];
+  }
+};
+
+export default nextConfig;
